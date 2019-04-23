@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape src/test.js | tap-spec",
+    "server": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,13 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2"
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.18.11",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
+  },
+  "dependencies": {
+    "query-string": "^6.4.2",
+    "request": "^2.88.0"
   }
 }
