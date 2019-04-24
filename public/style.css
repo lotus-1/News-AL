@@ -1,16 +1,72 @@
 body {
-  background-image: url('https://i.gifer.com/XYyP.gif');
+  background-image: url('https://ak5.picdn.net/shutterstock/videos/27032155/thumb/1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
   text-align: center;
   font-size: 40px;
   background-attachment: fixed;
 }
+h1 {
+  font-size: 120px;
+  padding-left: 800px;
+  padding-top: 180px;
+  font-family:sans-serif;
+  color: white;
+  animation: blinker 3s linear infinite;
 
+}
+@keyframes blinker {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+  }
+
+h2 {
+  font-size: 80px;
+  padding-left: 80px;
+  padding-top: 50px;
+  font-family:sans-serif;
+  color: #b3e0ff;
+  text-shadow: 5px 5px black;
+
+}
+h3 {
+  font-size: 50px;
+  padding-left: 80px;
+  font-family:sans-serif;
+  color: #b3e0ff;
+  text-shadow: 5px 5px black;
+}
+#userInput[type=text] {
+  width: 500px;
+  height: 40px;
+   border: 3px solid #00B4CC;
+   padding: 5px;
+   border-radius: 5px 0 0 5px;
+   outline: none;
+   font-size: 40px;
+}
+#input {
+width: 300px;
+height: 60px;
+border: 1px solid #00B4CC;
+background: #00B4CC;
+text-align: center;
+color: #fff;
+border-radius: 0 5px 5px 0;
+cursor: pointer;
+font-size: 40px;
+}
+a{
+  color: red;
+  text-shadow: 2px 2px black;
+font-size: 80px;
+}
 @media screen and (max-width: 600px) {
   h1 {
-font-size: 30px;
+font-size: 50px;
+padding-right: 250px;
   }
   #userInput[type=text] {
     width: 100%;

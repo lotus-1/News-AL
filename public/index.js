@@ -14,7 +14,7 @@ fetch('/search?sources='+userInput)
     .then((data) => {
         console.log('this is my data', data);
         var info = document.createElement('a');
-        var text = document.createTextNode('Link');
+        var text = document.createTextNode('Click Here');
         info.href = data;
         info.appendChild(text);
         var div = document.getElementById('info');
