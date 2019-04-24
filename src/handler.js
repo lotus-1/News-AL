@@ -4,44 +4,6 @@ const querystring = require('query-string');
 const requester = require('request');
 const url = require('url');
 
-
-// const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('ed9cab572cab44078dc8c8a83f6c10b5');
-// // To query /v2/top-headlines
-// // All options passed to topHeadlines are optional, but you need to include at least one of them
-// newsapi.v2.topHeadlines({
-//   sources: 'bbc-news,the-verge',
-//   q: 'bitcoin',
-//   category: 'business',
-//   language: 'en',
-//   country: 'us'
-// }).then(response => {
-//   console.log(response);
-// });
-// // To query /v2/everything
-// // You must include at least one q, source, or domain
-// newsapi.v2.everything({
-//   q: 'bitcoin',
-//   sources: 'bbc-news,the-verge',
-//   domains: 'bbc.co.uk, techcrunch.com',
-//   from: '2017-12-01',
-//   to: '2017-12-12',
-//   language: 'en',
-//   sortBy: 'relevancy',
-//   page: 2
-// }).then(response => {
-//   console.log(response);
-// });
-// // To query sources
-// // All options are optional
-// newsapi.v2.sources({
-//   category: 'technology',
-//   language: 'en',
-//   country: 'us'
-// }).then(response => {
-//   console.log(response);
-// });
-
 const handlerHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
   fs.readFile(filePath, (error, file) => {
@@ -94,31 +56,25 @@ requester(myUrl, (err, res, body) => {
     const parseData = JSON.parse(body);
     const arrayOfObj = parseData.sources;
     console.log(arrayOfObj);
-    for(var obj in arrayOfObj) {
-      if(arrayOfObj.hasOwnProperty(obj)) {
-        for(var prop in arrayOfObj[obj]) {
-          if(arrayOfObj[obj].hasOwnProperty(prop)) {
-            if (prop ==url) {
-              prop;
-            }
-          }
-        }
-      }
-    }
-// const i = 0;
-// arrayOfObj.forEach((char) => {
-//   const id = arrayOfObj[i].id;
-//   const url = arrayOfObj[i].url;
-//   console.log(id);
-//   console.log(url);
-// //  i = i + 1;
-// });
-
-    //console.log(parseData.sources[0].url);
-    // const parseUrl = JSON.parse(parseData);
-    // console.log(parseUrl);
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.end();
+ // const objIndex = arrayOfObj.findIndex((obj => obj.id === userInput));
+ // console.log(objIndex);
+ // console.log(arrayOfObj[objIndex].id);
+    // arrayOfObj.filter(el => el[url])
+    // console.log(arrayOfObj);
+    let result = [];
+arrayOfObj.forEach((obj) => {
+  let id = obj.id;
+  let url = obj.url;
+  console.log(id);
+  console.log(url);
+  if(id.indexOf(userInput) !== -1){
+    result.push(url);
+  }
+//result.push(id);
+})
+console.log(result[0]);
+    response.writeHead(200);
+    response.end(JSON.stringify(result[0]));
   }
 })
 });
