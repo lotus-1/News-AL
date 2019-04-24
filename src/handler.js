@@ -93,35 +93,17 @@ requester(myUrl, (err, res, body) => {
   } else {
     const parseData = JSON.parse(body);
     const arrayOfObj = parseData.sources;
-    console.log(arrayOfObj);
-    for(var obj in arrayOfObj) {
-      if(arrayOfObj.hasOwnProperty(obj)) {
-        for(var prop in arrayOfObj[obj]) {
-          if(arrayOfObj[obj].hasOwnProperty(prop)) {
-            if (prop ==url) {
-              prop;
-            }
-          }
-        }
-      }
-    }
-// const i = 0;
-// arrayOfObj.forEach((char) => {
-//   const id = arrayOfObj[i].id;
-//   const url = arrayOfObj[i].url;
-//   console.log(id);
-//   console.log(url);
-// //  i = i + 1;
-// });
 
-    //console.log(parseData.sources[0].url);
+  
     // const parseUrl = JSON.parse(parseData);
     // console.log(parseUrl);
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end();
-  }
-})
+    }
+  });
 });
+
+
 
 module.exports = {
   handlerHome,
