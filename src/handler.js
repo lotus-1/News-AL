@@ -76,6 +76,12 @@ const handlerPublic = ((request, response, url) => {
 
 const handlerSearch = ((request, response) => {
 console.log('requestUrl', request.url);
+const parseRequest = url.parse(request.url);
+console.log('parse', parseRequest);
+const parseQuery = parseRequest.query;
+console.log(parseQuery);
+const userInput = querystring.parse(parseQuery).sources;
+console.log(userInput);
 const myUrl = 'https://newsapi.org/v2/sources?apiKey=ed9cab572cab44078dc8c8a83f6c10b5';
 console.log(myUrl);
 requester(myUrl, (err, res, body) => {
@@ -87,26 +93,8 @@ requester(myUrl, (err, res, body) => {
   } else {
     const parseData = JSON.parse(body);
     const arrayOfObj = parseData.sources;
-  console.log(arrayOfObj);
 
-//   for(var obj in parseData) {
-//       if(parseData.hasOwnProperty(obj)){
-//       for(var prop in parseData[obj]){
-//           if(parseData[obj].hasOwnProperty(prop)){
-//               if(prop=="name"){
-//                   prop;
-//               }
-//
-//           }
-//       }
-//   }
-// }
-      //return arrayOfObj[0].url;
-    // const a =
-    if (userInput.includes(a)) {
-      return parseData.sources[a].url;
-    }
-    console.log(parseData.sources[0].url);
+  
     // const parseUrl = JSON.parse(parseData);
     // console.log(parseUrl);
     response.writeHead(200, { 'Content-Type': 'text/html' });
