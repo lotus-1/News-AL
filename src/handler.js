@@ -1,7 +1,46 @@
 const path = require('path');
 const fs = require('fs');
 const querystring = require('query-string');
-const rqst = require('request');
+const requester = require('request');
+const url = require('url');
+
+
+// const NewsAPI = require('newsapi');
+// const newsapi = new NewsAPI('ed9cab572cab44078dc8c8a83f6c10b5');
+// // To query /v2/top-headlines
+// // All options passed to topHeadlines are optional, but you need to include at least one of them
+// newsapi.v2.topHeadlines({
+//   sources: 'bbc-news,the-verge',
+//   q: 'bitcoin',
+//   category: 'business',
+//   language: 'en',
+//   country: 'us'
+// }).then(response => {
+//   console.log(response);
+// });
+// // To query /v2/everything
+// // You must include at least one q, source, or domain
+// newsapi.v2.everything({
+//   q: 'bitcoin',
+//   sources: 'bbc-news,the-verge',
+//   domains: 'bbc.co.uk, techcrunch.com',
+//   from: '2017-12-01',
+//   to: '2017-12-12',
+//   language: 'en',
+//   sortBy: 'relevancy',
+//   page: 2
+// }).then(response => {
+//   console.log(response);
+// });
+// // To query sources
+// // All options are optional
+// newsapi.v2.sources({
+//   category: 'technology',
+//   language: 'en',
+//   country: 'us'
+// }).then(response => {
+//   console.log(response);
+// });
 
 const handlerHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
@@ -36,19 +75,35 @@ const handlerPublic = ((request, response, url) => {
 });
 
 const handlerSearch = ((request, response) => {
+console.log('requestUrl', request.url);
 const myUrl = 'https://newsapi.org/v2/sources?apiKey=ed9cab572cab44078dc8c8a83f6c10b5';
-rqst(myUrl, (err, res, data) => {
+console.log(myUrl);
+requester(myUrl, (err, res, body) => {
+  //console.log('body is', JSON.parse(body));
   if (err) {
+    console.log('err', err);
     response.writeHead(500, { 'Content-Type': 'text/plain' });
-    response.end('Not Found');
+    response.end('There is a server error');
   } else {
-    const parseData = JSON.parse(data.sources);
-    console.log(parseData);
+    const parseData = JSON.parse(body);
+    const arrayOfObj = parseData.sources;
+  //  console.log(arrayOfObj);
+    // arrayOfObj.map(el => {
+    //   if()el.url)
+    // console.log(el);
+      // return arrayOfObj[0].url;
+    // const a =
+    // if(a.includes(userInput)) {
+    //   return parseData.sources[a].url;
+    // }
+    //console.log(parseData.sources[0].url);
+    // const parseUrl = JSON.parse(parseData);
+    // console.log(parseUrl);
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end();
   }
-});
 })
+});
 
 module.exports = {
   handlerHome,
