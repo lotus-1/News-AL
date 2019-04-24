@@ -1,15 +1,19 @@
-const input = document.getElementById('input');
-input.addEventListener('click', (value) => {
-  value.preventDefault();
-  fetch("/search")
-    .then(function(response) {
-      return response.json();
+const submitButton = document.getElementById('input');
+
+submitButton.addEventListener('click', (event) => {
+event.preventDefault();
+var userInput = document.getElementById('userInput').value;
+
+console.log(userInput);
+
+fetch('/search?sources='+userInput)
+      .then((response) => {
+      return response;
+      })
+    .then((data) => {
+        console.log(data);
     })
-    .then(function(data) {
-      data = data.toLowerCase();
-      console.log(data);
-})
-    .catch(function(error) {
-      console.log(error);
+      .catch((err) => {
+      console.log(err);
     });
 });
