@@ -87,23 +87,35 @@ requester(myUrl, (err, res, body) => {
   } else {
     const parseData = JSON.parse(body);
     const arrayOfObj = parseData.sources;
-  //  console.log(arrayOfObj);
-    // arrayOfObj.map(el => {
-    //   if()el.url)
-    // console.log(el);
-      // return arrayOfObj[0].url;
+  console.log(arrayOfObj);
+
+//   for(var obj in parseData) {
+//       if(parseData.hasOwnProperty(obj)){
+//       for(var prop in parseData[obj]){
+//           if(parseData[obj].hasOwnProperty(prop)){
+//               if(prop=="name"){
+//                   prop;
+//               }
+//
+//           }
+//       }
+//   }
+// }
+      //return arrayOfObj[0].url;
     // const a =
-    // if(a.includes(userInput)) {
-    //   return parseData.sources[a].url;
-    // }
-    //console.log(parseData.sources[0].url);
+    if (userInput.includes(a)) {
+      return parseData.sources[a].url;
+    }
+    console.log(parseData.sources[0].url);
     // const parseUrl = JSON.parse(parseData);
     // console.log(parseUrl);
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end();
-  }
-})
+    }
+  });
 });
+
+
 
 module.exports = {
   handlerHome,
