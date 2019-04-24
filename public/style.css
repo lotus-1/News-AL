@@ -1,8 +1,36 @@
-/* body {
+body {
   background-image: url('https://i.gifer.com/XYyP.gif');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   text-align: center;
+  font-size: 40px;
+  background-attachment: fixed;
 }
-*/
+
+@media screen and (max-width: 600px) {
+  h1 {
+font-size: 30px;
+  }
+  #userInput[type=text] {
+    width: 100%;
+     border: 3px solid #00B4CC;
+     border-right: none;
+     padding: 5px;
+     height: 20px;
+     border-radius: 5px 0 0 5px;
+     outline: none;
+     color: #9DBFAF;
+}
+#input {
+  width: 75px;
+ height: 60px;
+ border: 1px solid #00B4CC;
+ background: #00B4CC;
+ text-align: center;
+ color: #fff;
+ border-radius: 0 5px 5px 0;
+ cursor: pointer;
+ font-size: 40px;
+ }
+}
