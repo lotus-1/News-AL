@@ -1,9 +1,8 @@
 const submitButton = document.getElementById('input');
 
-submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click',(event) => {
 event.preventDefault();
-var userInput = document.getElementById('userInput').value;
-
+const userInput = document.getElementById('userInput').value;
 console.log(userInput);
 
 fetch('/search?sources='+userInput)
@@ -19,6 +18,7 @@ fetch('/search?sources='+userInput)
         info.appendChild(text);
         var div = document.getElementById('info');
         div.appendChild(info);
+        window.open(data,"_blank");
     })
       .catch((err) => {
       console.log(err);
