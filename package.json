@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "tape src/test.js | tap-spec",
-    "server": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+      "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
