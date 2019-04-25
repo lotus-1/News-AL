@@ -37,6 +37,8 @@ We used the following core modules this week:<br>
 *`url`: splits up a web address into readable parts.<br>
 ```url.parse()``` - return a URL object with each part of the address as properties* <br>
 
+![picture](assest/pic.jpg)
+
 #### :small_red_triangle: If we had time :smile:
 We will use Heroku and do more challenging things :muscle:
 ### We enjoy working together it was so interesting,absorbing and full of energy.
