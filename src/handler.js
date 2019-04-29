@@ -22,7 +22,8 @@ const handlerPublic = ((request, response, url) => {
   const extenstionTypes = {
     html: 'text/html',
     js: 'application/javascript',
-    css: 'text/css'
+    css: 'text/css',
+    jpg: 'image/jpg',
   };
   const filePath = path.join(__dirname, '..', url);
   fs.readFile(filePath, (err, file) => {
