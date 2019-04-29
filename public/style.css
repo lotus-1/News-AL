@@ -39,7 +39,7 @@ h3 {
   text-shadow: 5px 5px black;
 }
 #userInput[type=text] {
-  width: 500px;
+  width: 350px;
   height: 40px;
    border: 3px solid #00B4CC;
    padding: 5px;
@@ -63,7 +63,23 @@ a{
   text-shadow: 2px 2px black;
 font-size: 80px;
 }
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: url('https://i.pinimg.com/originals/0a/f8/be/0af8bea8f50b962f3d9cdfe406cb3677.jpg');
+    font-size: 50px;
+    }
+    h1 {
+      font-size: 80px;
+      padding-left: 80px;
+    }
+  form {
+      width: 300px;
+      height: 60px;
+    }
+  }
+
+
+/* @media screen and (max-width: 600px) {
   h1 {
 font-size: 50px;
 padding-right: 250px;
@@ -89,4 +105,4 @@ padding-right: 250px;
  cursor: pointer;
  font-size: 40px;
  }
-}
+} */
