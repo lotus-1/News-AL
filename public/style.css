@@ -1,5 +1,6 @@
+@media (min-width: 1281px) {
 body {
-  background-image: url('https://ak5.picdn.net/shutterstock/videos/27032155/thumb/1.jpg');
+  background-image: url('assest/1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -63,46 +64,19 @@ a{
   text-shadow: 2px 2px black;
 font-size: 80px;
 }
-@media only screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
   body {
-    background-image: url('https://i.pinimg.com/originals/0a/f8/be/0af8bea8f50b962f3d9cdfe406cb3677.jpg');
+    background-image: url('assest/2.jpg');
     font-size: 50px;
     }
     h1 {
-      font-size: 80px;
-      padding-left: 80px;
+      /* font-size: 100px; */
+      padding-left: 50px;
     }
   form {
       width: 300px;
       height: 60px;
     }
   }
-
-
-/* @media screen and (max-width: 600px) {
-  h1 {
-font-size: 50px;
-padding-right: 250px;
-  }
-  #userInput[type=text] {
-    width: 100%;
-     border: 3px solid #00B4CC;
-     border-right: none;
-     padding: 5px;
-     height: 20px;
-     border-radius: 5px 0 0 5px;
-     outline: none;
-     color: #9DBFAF;
-}
-#input {
-  width: 75px;
- height: 60px;
- border: 1px solid #00B4CC;
- background: #00B4CC;
- text-align: center;
- color: #fff;
- border-radius: 0 5px 5px 0;
- cursor: pointer;
- font-size: 40px;
- }
-} */
